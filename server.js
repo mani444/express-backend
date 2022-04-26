@@ -41,7 +41,7 @@ async function createUser() {
   }
 }
 
-createUser();
+// createUser();
 app.post("/Login", async (req, res) => {
   const name = req.body;
 
@@ -83,6 +83,7 @@ const getUser = async (name) => {
 //   });
 // });
 
-app.listen(3001, () => {
-  console.log("started");
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+  console.log(`Listening on port ${port}...`);
 });
