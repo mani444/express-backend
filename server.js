@@ -7,9 +7,10 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
-
+const ATLAS_URI =
+  "mongodb+srv://mani444:4045@cluster0.fbb0p.mongodb.net/sample_mflix?retryWrites=true&w=majority";
 mongoose
-  .connect("mongodb://localhost:27017/users", {
+  .connect(process.env.ATLAS_URI || "mongodb://localhost:27017/users", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
@@ -41,7 +42,7 @@ async function createUser() {
   }
 }
 
-//createUser();
+createUser();
 app.post("/Login", async (req, res) => {
   const name = req.body;
 
