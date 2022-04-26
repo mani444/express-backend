@@ -30,7 +30,7 @@ const userSchema = new mongoose.Schema({
 const User = mongoose.model("users", userSchema);
 async function createUser() {
   const user = new User({
-    name: "abdul mannan",
+    name: "1212",
   });
 
   try {
@@ -41,7 +41,7 @@ async function createUser() {
   }
 }
 
-// createUser();
+createUser();
 app.post("/Login", async (req, res) => {
   const name = req.body;
 
@@ -83,7 +83,7 @@ const getUser = async (name) => {
 //   });
 // });
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 4000;
 app.listen(port, () => {
   console.log(`Listening on port ${port}...`);
 });
