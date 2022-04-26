@@ -2,13 +2,12 @@ import express from "express";
 // const express = require("express");
 import cors from "cors";
 import mongoose from "mongoose";
-
+import "dotenv/config";
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
-const ATLAS_URI =
-  "mongodb+srv://mani444:4045@cluster0.fbb0p.mongodb.net/sample_mflix?retryWrites=true&w=majority";
+const ATLAS_URI = "mongodb+srv://mani444:4045@cluster0.fbb0p.mongodb.net/users";
 mongoose
   .connect(process.env.ATLAS_URI || "mongodb://localhost:27017/users", {
     useNewUrlParser: true,
